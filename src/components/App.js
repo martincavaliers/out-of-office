@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import MainArea from "./MainArea";
+import SideBar from "./SideBar";
 
 class App extends Component {
   state = {
@@ -37,6 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <MainArea />
+        <SideBar />
       </div>
     );
   }

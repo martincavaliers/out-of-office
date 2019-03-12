@@ -19,7 +19,6 @@ class GuestLoginForm extends Component {
             Submit
           </Button>
         </Form>
-        ;
       </div>
     );
   }
