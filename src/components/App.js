@@ -38,7 +38,8 @@ class App extends Component {
     return (
       <div className="App">
         <MainArea />
-        <SideBar />
+
+        <SideBar staff={this.state.staff} />
       </div>
     );
   }

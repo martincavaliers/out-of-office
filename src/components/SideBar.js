@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import { Container, Jumbotron } from "react-bootstrap";
+import StaffArea from "./StaffArea";
+import GuestArea from "./GuestArea";
 
 class SideBar extends Component {
   render() {
     return (
       <div className="sidebar">
-        <div id="staff-area">
-          <h1>Staff</h1>
-        </div>
+        <StaffArea staff={this.props.staff} />
 
-        <div id="guest-area">
-          <h1>Guests</h1>
-        </div>
+        <GuestArea />
       </div>
     );
   }
