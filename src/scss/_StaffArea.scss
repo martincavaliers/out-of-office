@@ -1,17 +1,19 @@
 #staff-area {
     h1 {
         text-align: center;
+        text-decoration: underline;
+        padding: 10px;
     }
 
     .profile {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: minmax(100px, 1fr) minmax(200px, 2fr);
     }
 
     .indicator {
         height: 20px;
         width: 30px;
-        margin-left: 15px;
+        margin-left: 20px;
     }
 
 }
