@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.css";
+import "../index.scss";
 import MainArea from "./MainArea";
 import SideBar from "./SideBar";
 

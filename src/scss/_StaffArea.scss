@@ -1,0 +1,17 @@
+#staff-area {
+    h1 {
+        text-align: center;
+    }
+
+    .profile {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .indicator {
+        height: 20px;
+        width: 30px;
+        margin-left: 15px;
+    }
+
+}

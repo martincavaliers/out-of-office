@@ -1,15 +1,23 @@
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
+import { Badge } from "react-bootstrap";
 
 class StaffArea extends Component {
   render() {
     return (
       <div id="staff-area">
         <h1>Staff</h1>
-        <div>
+        <div id="staff-list">
           {this.props.staff.map(person => (
-            <p>
-              {person.firstName} {person.lastName}
-            </p>
+            <Fragment>
+              <div className="profile">
+                <Badge className="indicator" pill variant="success">
+                  In
+                </Badge>
+                <p>
+                  {person.firstName} {person.lastName}
+                </p>
+              </div>
+            </Fragment>
           ))}
         </div>
       </div>
