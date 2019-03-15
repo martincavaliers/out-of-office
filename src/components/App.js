@@ -55,7 +55,10 @@ class App extends Component {
       <div className="App">
         <MainArea addGuest={this.handleAddGuest} />
 
-        <SideBar staff={this.state.staff} />
+        <SideBar 
+          staff={this.state.staff}
+          guests={this.state.guests}
+        />
       </div>
     );
   }
