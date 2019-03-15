@@ -8,10 +8,13 @@ class GuestArea extends Component {
         <div id="guest-list">
           {this.props.guests.map((person, index) => (
             <Fragment>
-              <div className="profile">
-                <p className="person-name">
+              <div className="profile guest-profile">
+                <p className="person-name guest-name">
                   {person.firstName} {person.lastName}
                 </p>
+                <a href="#" className="delete-button">
+                  X
+                </a>
               </div>
             </Fragment>
           ))}

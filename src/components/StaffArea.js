@@ -9,11 +9,11 @@ class StaffArea extends Component {
         <div id="staff-list">
           {this.props.staff.map((person, index) => (
             <Fragment>
-              <div className="profile">
+              <div className="profile staff-profile">
                 <Badge className="indicator" pill variant="success">
                   In
                 </Badge>
-                <p className="person-name">
+                <p className="person-name staff-name">
                   {person.firstName} {person.lastName}
                 </p>
               </div>

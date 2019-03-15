@@ -2,17 +2,26 @@
     h1 {
         text-align: center;
         text-decoration: underline;
+        padding: 10px;
+    }
+}
+
+.guest-profile {
+    display: flex;
+    justify-content: center;
+
+    .guest-name {
+        padding-right: 10px;
     }
 
-    // .profile {
-    //     display: grid;
-    //     grid-template-columns: 1fr 2fr;
-    // }
+    .delete-button {
+        color: red;
+        opacity: 0.5;
+        display: inline-block;
 
-    // .indicator {
-    //     height: 20px;
-    //     width: 30px;
-    //     margin-left: 15px;
-    // }
-
+        &:hover {
+            opacity: 1;
+            transform: scale(1.4, 1.4);
+        }
+    }
 }
