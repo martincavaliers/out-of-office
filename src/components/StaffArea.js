@@ -6,7 +6,15 @@ class StaffArea extends Component {
     return (
       <div id="staff-area">
         <h1>Staff</h1>
-        <StaffMember staff={this.props.staff} />
+        {this.props.staff.map((person, index) => (
+          <StaffMember
+            firstName={person.firstName}
+            lastName={person.lastName}
+            inOffice={person.inOffice}
+            key={index + 1}
+            id={index + 1}
+          />
+        ))}
       </div>
     );
   }

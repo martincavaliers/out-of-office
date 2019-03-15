@@ -8,7 +8,10 @@ class SideBar extends Component {
       <div className="sidebar">
         <StaffArea staff={this.props.staff} />
 
-        <GuestArea guests={this.props.guests} />
+        <GuestArea
+          guests={this.props.guests}
+          removeGuest={this.props.removeGuest}
+        />
       </div>
     );
   }

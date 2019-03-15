@@ -6,7 +6,15 @@ class GuestArea extends Component {
     return (
       <div id="guest-area">
         <h1>Guests</h1>
-        <Guest guests={this.props.guests} />
+        {this.props.guests.map((person, index) => (
+          <Guest
+            firstName={person.firstName}
+            lastName={person.lastName}
+            key={index + 1}
+            id={index + 1}
+            removeGuest={this.props.removeGuest}
+          />
+        ))}
       </div>
     );
   }

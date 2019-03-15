@@ -4,18 +4,19 @@ class Guest extends Component {
   render() {
     return (
       <div id="guest-list">
-        {this.props.guests.map((person, index) => (
-          <Fragment key={index + 1}>
-            <div className="profile guest-profile" key={"1"}>
-              <p className="person-name guest-name" key={"2"}>
-                {person.firstName} {person.lastName}
-              </p>
-              <a href="#" className="delete-button" key={"3"}>
-                X
-              </a>
-            </div>
-          </Fragment>
-        ))}
+        <Fragment>
+          <div className="profile guest-profile">
+            <p className="person-name guest-name">
+              {this.props.firstName} {this.props.lastName}
+            </p>
+            <button
+              className="delete-button"
+              onClick={() => this.props.removeGuest(this.props.id)}
+            >
+              X
+            </button>
+          </div>
+        </Fragment>
       </div>
     );
   }

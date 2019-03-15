@@ -32,7 +32,33 @@ class App extends Component {
         inOffice: false
       }
     ],
-    guests: []
+    guests: [
+      {
+        firstName: "Martin",
+        lastName: "Coutts",
+        inOffice: true
+      },
+      {
+        firstName: "Lauren",
+        lastName: "King",
+        inOffice: false
+      },
+      {
+        firstName: "Kylo",
+        lastName: "Coutts",
+        inOffice: true
+      },
+      {
+        firstName: "Lisa",
+        lastName: "Green",
+        inOffice: false
+      },
+      {
+        firstName: "Mitchell",
+        lastName: "Tribisky",
+        inOffice: false
+      }
+    ]
   };
 
   handleAddGuest = (firstName, lastName) => {
@@ -49,12 +75,25 @@ class App extends Component {
     });
   };
 
+  handleRemoveGuest = id => {
+    console.log(id);
+    this.setState(prevState => {
+      return {
+        guests: prevState.guests.filter(guest => guest.id !== id)
+      };
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <MainArea addGuest={this.handleAddGuest} />
 
-        <SideBar staff={this.state.staff} guests={this.state.guests} />
+        <SideBar
+          staff={this.state.staff}
+          guests={this.state.guests}
+          removeGuest={this.handleRemoveGuest}
+        />
       </div>
     );
   }
