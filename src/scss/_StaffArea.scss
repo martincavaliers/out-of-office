@@ -7,13 +7,18 @@
 
     .profile {
         display: grid;
-        grid-template-columns: minmax(100px, 1fr) minmax(200px, 2fr);
+        grid-template-columns: minmax(50px, 1fr) minmax(200px, 2fr);
     }
 
     .indicator {
         height: 20px;
         width: 30px;
-        margin-left: 20px;
+        margin: 0 auto;
+    }
+
+    .person-name {
+        justify-content: flex-start;
+        padding-left: 20px;
     }
 
 }

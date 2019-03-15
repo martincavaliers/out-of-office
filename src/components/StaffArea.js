@@ -13,7 +13,7 @@ class StaffArea extends Component {
                 <Badge className="indicator" pill variant="success">
                   In
                 </Badge>
-                <p>
+                <p className="person-name">
                   {person.firstName} {person.lastName}
                 </p>
               </div>

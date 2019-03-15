@@ -7,7 +7,7 @@ class MainArea extends Component {
       <div className="main-area">
         <h1>Welcome</h1>
         <h3>If you are a guest then please type your name below and log in</h3>
-        <GuestLoginForm />
+        <GuestLoginForm addGuest={this.props.addGuest} />
       </div>
     );
   }

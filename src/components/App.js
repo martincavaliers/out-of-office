@@ -31,13 +31,29 @@ class App extends Component {
         lastName: "Tribisky",
         inOffice: false
       }
-    ]
+    ],
+    guests: []
+  };
+
+  handleAddGuest = (firstName, lastName) => {
+    this.setState(prevState => {
+      return {
+        guests: [
+          ...prevState.guests,
+          {
+            firstName,
+            lastName
+          }
+        ]
+      };
+    });
+    console.log(firstName);
   };
 
   render() {
     return (
       <div className="App">
-        <MainArea />
+        <MainArea addGuest={this.handleAddGuest} />
 
         <SideBar staff={this.state.staff} />
       </div>

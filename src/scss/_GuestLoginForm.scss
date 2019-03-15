@@ -1,21 +1,9 @@
 #login-form {
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-        "first-name""last-name"
-    ;
-}
-
-#first-name-div {
-    grid-area: first-name;
-}
-
-#last-name-div {
-    grid-area: last-name;
+    margin-top: 30px;
 }
 
 #submit-button {
-    grid-area: 'submit-button';
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
