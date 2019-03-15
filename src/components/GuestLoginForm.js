@@ -30,7 +30,7 @@ class GuestLoginForm extends Component {
             <Col lg={6}>
               <div id="first-name-div">
                 <Form.Group controlId="formBasicEmail">
-                  <Form.Label>First Name</Form.Label>
+                  {/* <Form.Label>First Name</Form.Label> */}
                   <Form.Control
                     type="text"
                     placeholder="First Name"
@@ -43,7 +43,7 @@ class GuestLoginForm extends Component {
             <Col lg={6}>
               <div id="last-name-div">
                 <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Last Name</Form.Label>
+                  {/* <Form.Label>Last Name</Form.Label> */}
                   <Form.Control
                     type="text"
                     placeholder="Last Name"
