@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 import StaffMember from "./StaffMember";
 
 class StaffArea extends Component {

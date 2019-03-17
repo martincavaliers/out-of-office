@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Guest from "./Guest";
 
 class GuestArea extends Component {
@@ -11,7 +11,7 @@ class GuestArea extends Component {
             firstName={person.firstName}
             lastName={person.lastName}
             key={index + 1}
-            id={index + 1}
+            id={person.id}
             removeGuest={this.props.removeGuest}
           />
         ))}

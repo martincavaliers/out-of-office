@@ -33,33 +33,41 @@ class App extends Component {
       }
     ],
     guests: [
-      {
-        firstName: "Martin",
-        lastName: "Coutts",
-        inOffice: true
-      },
-      {
-        firstName: "Lauren",
-        lastName: "King",
-        inOffice: false
-      },
-      {
-        firstName: "Kylo",
-        lastName: "Coutts",
-        inOffice: true
-      },
-      {
-        firstName: "Lisa",
-        lastName: "Green",
-        inOffice: false
-      },
-      {
-        firstName: "Mitchell",
-        lastName: "Tribisky",
-        inOffice: false
-      }
+      // {
+      //   firstName: "Martin",
+      //   lastName: "Coutts",
+      //   inOffice: true,
+      //   id: 1
+      // },
+      // {
+      //   firstName: "Lauren",
+      //   lastName: "King",
+      //   inOffice: false,
+      //   id: 2
+      // },
+      // {
+      //   firstName: "Kylo",
+      //   lastName: "Coutts",
+      //   inOffice: true,
+      //   id: 3
+      // },
+      // {
+      //   firstName: "Lisa",
+      //   lastName: "Green",
+      //   inOffice: false,
+      //   id: 4
+      // },
+      // {
+      //   firstName: "Mitchell",
+      //   lastName: "Tribisky",
+      //   inOffice: false,
+      //   id: 5
+      // }
     ]
   };
+
+  // Initialise ID counter
+  prevGuestId = 0;
 
   handleAddGuest = (firstName, lastName) => {
     this.setState(prevState => {
@@ -68,7 +76,9 @@ class App extends Component {
           ...prevState.guests,
           {
             firstName,
-            lastName
+            lastName,
+            id: (this.prevGuestId += 1),
+            inOffice: true
           }
         ]
       };
@@ -79,7 +89,7 @@ class App extends Component {
     console.log(id);
     this.setState(prevState => {
       return {
-        guests: prevState.guests.filter(guest => guest.id !== id)
+        guests: prevState.guests.filter(g => g.id !== id)
       };
     });
   };
