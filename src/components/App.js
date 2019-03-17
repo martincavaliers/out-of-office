@@ -12,24 +12,29 @@ class App extends Component {
         inOffice: true
       },
       {
-        firstName: "Lauren",
-        lastName: "King",
+        firstName: "Homer",
+        lastName: "Simpson",
         inOffice: false
       },
       {
         firstName: "Kylo",
-        lastName: "Coutts",
+        lastName: "Ren",
         inOffice: true
       },
       {
-        firstName: "Lisa",
-        lastName: "Green",
+        firstName: "Charles",
+        lastName: "Xavier",
         inOffice: false
       },
       {
-        firstName: "Mitchell",
-        lastName: "Tribisky",
+        firstName: "Carol",
+        lastName: "Danvers",
         inOffice: false
+      },
+      {
+        firstName: "Bobby",
+        lastName: "Firmino",
+        inOffice: true
       }
     ],
     guests: [
@@ -95,7 +100,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.setState(prevState => {
+    localStorage.setItem("staff", JSON.stringify(this.state.staff));
+    this.setState(() => {
       return {
         guests: JSON.parse(localStorage.getItem("guests"))
       };
