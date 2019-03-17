@@ -94,6 +94,19 @@ class App extends Component {
     });
   };
 
+  componentDidMount() {
+    this.setState(prevState => {
+      return {
+        guests: JSON.parse(localStorage.getItem("guests"))
+      };
+    });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("staff", JSON.stringify(this.state.staff));
+    localStorage.setItem("guests", JSON.stringify(this.state.guests));
+  }
+
   render() {
     return (
       <div className="App">
