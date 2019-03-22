@@ -4,10 +4,15 @@ import { Container, Col, Row, Form, Button } from "react-bootstrap";
 class GuestLoginForm extends Component {
   state = {
     firstName: "",
-    lastName: ""
+    lastName: "",
+    formErrors: { firstName: "", lastName: "" },
+    firstNameValid: false,
+    lastNameValid: false,
+    validated: false
   };
 
   handleFirstNameChange = e => {
+    this.setState({ firstNameValid: true });
     this.setState({ firstName: e.target.value });
   };
 
@@ -15,36 +20,72 @@ class GuestLoginForm extends Component {
     this.setState({ lastName: e.target.value });
   };
 
+  handleValidation = (value1, value2) => {
+    if (!value1.match(/\d+/g) && !value2.match(/\d+/g)) {
+      this.setState(prevState => {
+        return {
+          validated: true
+        };
+      });
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   handleSubmit = e => {
     e.preventDefault();
-    console.log("submitting");
-    this.props.addGuest(this.state.firstName, this.state.lastName);
-    this.setState({ firstName: "", lastName: "" });
+    const isValid = this.handleValidation(
+      this.state.firstName,
+      this.state.lastName
+    );
+
+    if (isValid) {
+      // this.setState(prevState => {
+      //   return {
+      //     validated: true
+      //   };
+      // });
+      this.props.addGuest(this.state.firstName, this.state.lastName);
+      this.setState({ firstName: "", lastName: "" });
+    } else {
+      console.log("Number in input");
+    }
   };
 
   render() {
+    // const { validated } = this.state;
     return (
       <Container id="login-form">
-        <Form onSubmit={this.handleSubmit}>
+        <Form
+          noValidate
+          validated={this.state.validated}
+          onSubmit={this.handleSubmit}
+        >
           <Row>
             <Col lg={6}>
               <div id="first-name-div">
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group controlId="validationCustom01">
                   {/* <Form.Label>First Name</Form.Label> */}
                   <Form.Control
+                    required
                     type="text"
                     placeholder="First Name"
                     value={this.state.firstName}
                     onChange={this.handleFirstNameChange}
                   />
+                  <Form.Control.Feedback type="invalid">
+                    Please Enter Valid Name
+                  </Form.Control.Feedback>
                 </Form.Group>
               </div>
             </Col>
             <Col lg={6}>
               <div id="last-name-div">
-                <Form.Group controlId="formBasicPassword">
+                <Form.Group controlId="validationCustom02">
                   {/* <Form.Label>Last Name</Form.Label> */}
                   <Form.Control
+                    required
                     type="text"
                     placeholder="Last Name"
                     value={this.state.lastName}
