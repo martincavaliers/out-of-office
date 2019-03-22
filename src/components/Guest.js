@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 
 class Guest extends Component {
   render() {
@@ -21,5 +22,11 @@ class Guest extends Component {
     );
   }
 }
+
+Guest.propTypes = {
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  removeGuest: PropTypes.func
+};
 
 export default Guest;

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Badge } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 class StaffMember extends Component {
   render() {
@@ -25,5 +26,11 @@ class StaffMember extends Component {
     );
   }
 }
+
+StaffMember.propTypes = {
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  inOffice: PropTypes.bool
+};
 
 export default StaffMember;
