@@ -1,18 +1,15 @@
 import React, { Component } from "react";
 import { Container, Col, Row, Form, Button } from "react-bootstrap";
+import { isNull } from "util";
 
 class GuestLoginForm extends Component {
   state = {
     firstName: "",
     lastName: "",
-    formErrors: { firstName: "", lastName: "" },
-    firstNameValid: false,
-    lastNameValid: false,
-    validated: false
+    validated: true
   };
 
   handleFirstNameChange = e => {
-    this.setState({ firstNameValid: true });
     this.setState({ firstName: e.target.value });
   };
 
@@ -41,31 +38,23 @@ class GuestLoginForm extends Component {
     );
 
     if (isValid) {
-      // this.setState(prevState => {
-      //   return {
-      //     validated: true
-      //   };
-      // });
       this.props.addGuest(this.state.firstName, this.state.lastName);
-      this.setState({ firstName: "", lastName: "" });
+      this.setState({ validated: true, firstName: "", lastName: "" });
     } else {
-      console.log("Number in input");
+      this.setState({ validated: false });
     }
+
+    console.log(this.state.validated);
   };
 
   render() {
-    // const { validated } = this.state;
     return (
       <Container id="login-form">
-        <Form
-          noValidate
-          validated={this.state.validated}
-          onSubmit={this.handleSubmit}
-        >
+        <Form onSubmit={this.handleSubmit}>
           <Row>
             <Col lg={6}>
               <div id="first-name-div">
-                <Form.Group controlId="validationCustom01">
+                <Form.Group>
                   {/* <Form.Label>First Name</Form.Label> */}
                   <Form.Control
                     required
@@ -74,15 +63,12 @@ class GuestLoginForm extends Component {
                     value={this.state.firstName}
                     onChange={this.handleFirstNameChange}
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Please Enter Valid Name
-                  </Form.Control.Feedback>
                 </Form.Group>
               </div>
             </Col>
             <Col lg={6}>
               <div id="last-name-div">
-                <Form.Group controlId="validationCustom02">
+                <Form.Group>
                   {/* <Form.Label>Last Name</Form.Label> */}
                   <Form.Control
                     required
@@ -93,6 +79,15 @@ class GuestLoginForm extends Component {
                   />
                 </Form.Group>
               </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col id="error-span">
+              {this.state.validated ? (
+                <span />
+              ) : (
+                <span>Please enter valid name</span>
+              )}
             </Col>
           </Row>
           <Row>

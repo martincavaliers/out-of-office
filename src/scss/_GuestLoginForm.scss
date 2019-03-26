@@ -2,6 +2,15 @@
     margin-top: 30px;
 }
 
+#error-span {
+    text-align: center;
+    // display: none;
+
+    span {
+        color: red;
+    }
+}
+
 #submit-button {
     display: flex;
     justify-content: center;
