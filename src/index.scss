@@ -1,6 +1,10 @@
-@import './scss/App';
-@import './scss/MainArea';
-@import './scss/Sidebar';
-@import './scss/StaffArea';
-@import './scss/GuestArea';
-@import './scss/GuestLoginForm';
+// Utilities
+@import './scss/utilities/media-queries';
+
+// Components
+@import './scss/components/App';
+@import './scss/components/MainArea';
+@import './scss/components/Sidebar';
+@import './scss/components/StaffArea';
+@import './scss/components/GuestArea';
+@import './scss/components/GuestLoginForm';

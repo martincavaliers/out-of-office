@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Row, Col } from "react-bootstrap";
 import "../index.scss";
 import MainArea from "./MainArea";
 import SideBar from "./SideBar";
@@ -37,38 +38,7 @@ class App extends Component {
         inOffice: true
       }
     ],
-    guests: [
-      // {
-      //   firstName: "Martin",
-      //   lastName: "Coutts",
-      //   inOffice: true,
-      //   id: 1
-      // },
-      // {
-      //   firstName: "Lauren",
-      //   lastName: "King",
-      //   inOffice: false,
-      //   id: 2
-      // },
-      // {
-      //   firstName: "Kylo",
-      //   lastName: "Coutts",
-      //   inOffice: true,
-      //   id: 3
-      // },
-      // {
-      //   firstName: "Lisa",
-      //   lastName: "Green",
-      //   inOffice: false,
-      //   id: 4
-      // },
-      // {
-      //   firstName: "Mitchell",
-      //   lastName: "Tribisky",
-      //   inOffice: false,
-      //   id: 5
-      // }
-    ]
+    guests: []
   };
 
   // Initialise ID counter
@@ -115,15 +85,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <MainArea addGuest={this.handleAddGuest} />
+      <Row className="App">
+        {/* <div className="App"> */}
+        <Col lg={8}>
+          <MainArea addGuest={this.handleAddGuest} />
+        </Col>
 
-        <SideBar
-          staff={this.state.staff}
-          guests={this.state.guests}
-          removeGuest={this.handleRemoveGuest}
-        />
-      </div>
+        <Col lg={4}>
+          <SideBar
+            staff={this.state.staff}
+            guests={this.state.guests}
+            removeGuest={this.handleRemoveGuest}
+          />
+        </Col>
+        {/* </div> */}
+      </Row>
     );
   }
 }
