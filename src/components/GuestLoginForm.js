@@ -30,6 +30,7 @@ class GuestLoginForm extends Component {
   };
 
   handleSubmit = e => {
+    const firstNameInput = document.querySelector("#firstNameInput");
     e.preventDefault();
     const isValid = this.handleValidation(
       this.state.firstName,
@@ -39,11 +40,10 @@ class GuestLoginForm extends Component {
     if (isValid) {
       this.props.addGuest(this.state.firstName, this.state.lastName);
       this.setState({ validated: true, firstName: "", lastName: "" });
+      firstNameInput.focus();
     } else {
       this.setState({ validated: false });
     }
-
-    console.log(this.state.validated);
   };
 
   render() {
@@ -56,7 +56,8 @@ class GuestLoginForm extends Component {
                 <Form.Group>
                   {/* <Form.Label>First Name</Form.Label> */}
                   <Form.Control
-                    required
+                    required={this.state.isFirefox}
+                    id="firstNameInput"
                     type="text"
                     placeholder="First Name"
                     value={this.state.firstName}

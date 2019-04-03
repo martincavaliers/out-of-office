@@ -5,41 +5,46 @@ import MainArea from "./MainArea";
 import SideBar from "./SideBar";
 
 class App extends Component {
-  state = {
-    staff: [
-      {
-        firstName: "Martin",
-        lastName: "Coutts",
-        inOffice: true
-      },
-      {
-        firstName: "Homer",
-        lastName: "Simpson",
-        inOffice: false
-      },
-      {
-        firstName: "Kylo",
-        lastName: "Ren",
-        inOffice: true
-      },
-      {
-        firstName: "Charles",
-        lastName: "Xavier",
-        inOffice: false
-      },
-      {
-        firstName: "Carol",
-        lastName: "Danvers",
-        inOffice: false
-      },
-      {
-        firstName: "Bobby",
-        lastName: "Firmino",
-        inOffice: true
-      }
-    ],
-    guests: []
-  };
+  constructor(props) {
+    super(props);
+
+    // Assign state itself, and a default value for items
+    this.state = {
+      staff: [
+        {
+          firstName: "Martin",
+          lastName: "Coutts",
+          inOffice: true
+        },
+        {
+          firstName: "Homer",
+          lastName: "Simpson",
+          inOffice: false
+        },
+        {
+          firstName: "Kylo",
+          lastName: "Ren",
+          inOffice: true
+        },
+        {
+          firstName: "Charles",
+          lastName: "Xavier",
+          inOffice: false
+        },
+        {
+          firstName: "Carol",
+          lastName: "Danvers",
+          inOffice: false
+        },
+        {
+          firstName: "Bobby",
+          lastName: "Firmino",
+          inOffice: true
+        }
+      ],
+      guests: []
+    };
+  }
 
   // Initialise ID counter
   prevGuestId = 0;
