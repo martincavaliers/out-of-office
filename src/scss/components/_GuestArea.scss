@@ -4,6 +4,8 @@
         text-decoration: underline;
         padding: 10px;
     }
+
+
 }
 
 .guest-profile {
@@ -29,4 +31,15 @@
             transform: scale(1.4, 1.4);
         }
     }
+}
+
+@include single-column-layout {
+    #guest-area {
+        h1 {
+            padding: 15px 0 15px 0;
+        }
+
+    }
+
+
 }

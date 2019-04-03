@@ -1,4 +1,6 @@
 #staff-area {
+
+
     h1 {
         text-align: center;
         text-decoration: underline;
@@ -27,20 +29,8 @@
     }
 
     @include single-column-layout {
-        .staff-profile {
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 10px;
-        }
-
-        .indicator {
-            justify-self: flex-end;
-        }
-
         .staff-name {
-            justify-self: flex-start;
+            margin-left: 10px;
         }
-
-
     }
-
 }

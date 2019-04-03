@@ -85,9 +85,9 @@ class App extends Component {
 
   render() {
     return (
-      <Row className="App">
+      <Row className="App" noGutters={true}>
         {/* <div className="App"> */}
-        <Col lg={8}>
+        <Col lg={8} className="main-area">
           <MainArea addGuest={this.handleAddGuest} />
         </Col>
 

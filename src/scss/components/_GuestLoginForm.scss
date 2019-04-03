@@ -1,5 +1,7 @@
 #login-form {
     margin-top: 30px;
+    padding: 40px;
+
 }
 
 #error-span {
@@ -15,4 +17,10 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+
+    Button {
+        background-color: $main-brand-color;
+        border: none;
+    }
+
 }
