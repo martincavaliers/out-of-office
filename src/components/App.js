@@ -76,11 +76,6 @@ class App extends Component {
 
   componentDidMount() {
     localStorage.setItem("staff", JSON.stringify(this.state.staff));
-    this.setState(() => {
-      return {
-        guests: JSON.parse(localStorage.getItem("guests"))
-      };
-    });
   }
 
   componentDidUpdate() {

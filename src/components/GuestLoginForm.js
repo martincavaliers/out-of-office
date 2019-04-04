@@ -56,7 +56,7 @@ class GuestLoginForm extends Component {
                 <Form.Group>
                   {/* <Form.Label>First Name</Form.Label> */}
                   <Form.Control
-                    required={this.state.isFirefox}
+                    required
                     id="firstNameInput"
                     type="text"
                     placeholder="First Name"

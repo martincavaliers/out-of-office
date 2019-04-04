@@ -2,6 +2,15 @@
     margin-top: 30px;
     padding: 40px;
 
+    // Fixes Firefox red border bug
+    input:required {
+        box-shadow: none;
+    }
+
+    input:invalid {
+        box-shadow: none;
+    }
+
 }
 
 #error-span {
